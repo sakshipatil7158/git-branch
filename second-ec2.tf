@@ -13,11 +13,17 @@ terraform {
 
 resource "aws_instance" "terraform" {
   ami           = "ami-0c1ac8a41498c1a9c"
-  instance_type = "t3.micro"
+  instance_type = var.instance_type
   key_name = "newins"
   
 
   tags = {
     Name = "HelloWorld"
   }
+}
+
+#input variable
+variable "instance_type" {
+  default = "t3.micro"
+  
 }
