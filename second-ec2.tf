@@ -27,3 +27,8 @@ variable "instance_type" {
   default = "t3.micro"
   
 }
+
+#output variable
+output "public_ip" {
+  value = aws_instance.terraform.public_ip
+}
